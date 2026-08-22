@@ -1,0 +1,16 @@
+# Maven build output
+target/
+
+# Java tooling
+*.class
+
+# IDE metadata
+.vscode/
+.idea/
+*.iml
+
+# Operating system files
+.DS_Store
+
+# Application logs
+*.log
