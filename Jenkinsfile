@@ -7,11 +7,12 @@ pipeline {
     }
     stages {
         stage('init') {
-            script {
-                gv = load "script.groovy"
+            step {
+                script {
+                    gv = load "script.groovy"
+                }
             }
         }
-
         stage('build jar') {
             steps {
                 script {
@@ -19,7 +20,6 @@ pipeline {
                 }
             }
         }
-
         stage('build image') {
             steps {
                 script {
@@ -27,7 +27,6 @@ pipeline {
                 }
             }
         }
-
         stage('deploy') {
             steps {
                 script {
