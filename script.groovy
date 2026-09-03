@@ -12,6 +12,11 @@ def buildImage() {
     }
 }
 
+def executeTests() {
+    echo "Testing the Application"
+    echo "Executing pipeline for branch $BRANCHE_NAME"
+}
+
 def deployApp() {
     echo "Deploying the Application.."
 }

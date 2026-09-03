@@ -27,7 +27,19 @@ pipeline {
                 }
             }
         }
+        stage('testing') {
+            steps {
+                script {
+                   gv.executeTests()
+                }
+            }
+        }
         stage('deploy') {
+            when {
+                expression {
+                    BRANCHE_NAME == "main"
+                }
+            }
             steps {
                 script {
                     gv.deployApp()
