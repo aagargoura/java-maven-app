@@ -1,5 +1,14 @@
 #!/user/bin/env groovy
-@Library('jenkins-shared-library')
+
+// when imported globaly Library
+//@Library('jenkins-shared-library')
+
+// Reference the Library directly in Jenkinsfile
+library identifier: 'jenkins-shared-library@main', retriever: modernSCN(
+    [$class: 'GitSCMSource',
+    remote: 'https://github.com/aagargoura/jenkins-shared-library.git'
+    credentialsId: 'github-user-pwd-credentials'])
+
 def gv
 
 pipeline {
