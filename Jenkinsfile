@@ -4,9 +4,9 @@
 //@Library('jenkins-shared-library')
 
 // Reference the Library directly in Jenkinsfile
-library identifier: 'jenkins-shared-library@main', retriever: modernSCN(
+library identifier: 'jenkins-shared-library@main', retriever: modernSCM(
     [$class: 'GitSCMSource',
-    remote: 'https://github.com/aagargoura/jenkins-shared-library.git'
+    remote: 'https://github.com/aagargoura/jenkins-shared-library.git',
     credentialsId: 'github-user-pwd-credentials'])
 
 def gv
